@@ -1,0 +1,20 @@
+# ⬇️ PASTE GITHUB ACTIONS YAML HERE
+name: MLOps CI/CD Pipeline
+on: [push, pull_request]
+jobs:
+  train-and-validate:
+    runs-on: ubuntu-latest
+    env:
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: uv sync
+      - run: uv run python src/data_pipeline.py
+      - run: uv run python src/train.py
+      - run: uv run pytest tests/ -v
+      - name: Build Docker Image
+        run: docker build -t sms-spam-api .
