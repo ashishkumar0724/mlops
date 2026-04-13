@@ -1,0 +1,23 @@
+artifact_path: file:///C:/Users/morya/OneDrive/Desktop/mlops/sms-spam-mlops/mlruns/1/models/m-eecdb3251e824e90afaf4578e8936244/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.15
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.11.1
+model_id: m-eecdb3251e824e90afaf4578e8936244
+model_size_bytes: 7087787
+model_uuid: m-eecdb3251e824e90afaf4578e8936244
+prompts: null
+run_id: 666467c985384bff8c63a853c557823d
+utc_time_created: '2026-04-13 12:51:36.562157'

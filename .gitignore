@@ -1,14 +1,51 @@
-# ⬇️ PASTE .gitignore CONTENT HERE
+# Your existing .gitignore should include:
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
 .venv/
-.env
+pip-wheel-metadata/
+
+# ML/Data
+*.pkl
+*.joblib
+*.parquet
+*.csv
+*.tsv
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# MLflow
 mlflow.db
-mlruns/
-data/
-models/
-logs/
+mlruns/*/artifacts/
+mlruns/*/metrics/
+mlruns/*/params/
+mlruns/*/tags/
+
+# Logs & Temp
+logs/*.log
+*.log
+tmp/
+.temp/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+!.env.example
+
+# OS
 .DS_Store
-*.egg-info/
-dist/
-build/
+Thumbs.db
+
+# Docker (optional - keep Dockerfile, ignore build artifacts)
+*.dockerignore
