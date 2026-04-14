@@ -1,51 +1,40 @@
-# Your existing .gitignore should include:
-
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
-venv/
 .venv/
-pip-wheel-metadata/
+env/
 
-# ML/Data
-*.pkl
-*.joblib
-*.parquet
+# Data & Models (Artifacts, not code)
 *.csv
 *.tsv
+*.parquet
+*.pkl
+*.joblib
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
 # MLflow
 mlflow.db
-mlruns/*/artifacts/
-mlruns/*/metrics/
-mlruns/*/params/
-mlruns/*/tags/
+mlruns/
 
-# Logs & Temp
+# Logs
 logs/*.log
 *.log
-tmp/
-.temp/
 
-# IDE
+# IDE & OS
 .idea/
 .vscode/
 *.swp
 *.swo
+.DS_Store
+Thumbs.db
 
 # Environment
 .env
 !.env.example
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Docker (optional - keep Dockerfile, ignore build artifacts)
+# Docker
 *.dockerignore
